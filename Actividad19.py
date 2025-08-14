@@ -125,3 +125,43 @@ class RegistrarGalleta:
                 print("Galleta eliminada.")
                 return
         print("No se encontró.")
+
+registrar = RegistrarGalleta()
+while True:
+  try:
+    print("\n--- MENÚ ---")
+    print("1. Registrar galleta básica")
+    print("2. Registrar galleta con chispas")
+    print("3. Registrar galleta rellena")
+    print("4. Listar galletas")
+    print("5. Buscar galleta")
+    print("6. Eliminar galleta")
+    print("7. Salir")
+
+    try:
+        opcion = int(input("Elija una opcion: "))
+    except ValueError:
+        print("Ingrese un numero valido")
+    except TypeError:
+        print("Ingrese un numero valido")
+
+    if opcion == 1:
+        registrar.registrar_basica()
+    elif opcion == 2:
+        registrar.registrar_chispas()
+    elif opcion == 3:
+        registrar.registrar_rellena()
+    elif opcion == 4:
+        registrar.listar_galletas()
+    elif opcion == 5:
+        registrar.buscar_galleta()
+    elif opcion == 6:
+        registrar.eliminar_galleta()
+    elif opcion == 7:
+        print("Cerrando Programa :)")
+        break
+    else:
+        print("Opcion no válida.")
+
+  except Exception as e:
+      print("Ocurrio un error inesperado.")
